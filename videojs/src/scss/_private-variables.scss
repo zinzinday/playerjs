@@ -1,0 +1,17 @@
+// Text, icons, hover states
+$primary-foreground-color: #fff !default;
+
+// Control backgrounds (control bar, big play, menus)
+$primary-background-color: #2B333F !default;
+$primary-background-transparency: 0.15 !default;
+
+// Hover states, slider backgrounds
+$secondary-background-color: teal !default;
+$secondary-background-transparency: 0.5 !default;
+
+$text-font-family: Arial, Helvetica, sans-serif !default;
+
+// Using the '--' naming for component-specific styles
+$big-play-button--width: 1.5em !default;
+$big-play-button--height: 1.5em !default;
+$big-play-button--transparency: 0.6 !default;

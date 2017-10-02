@@ -1,0 +1,59 @@
+$icon-font-family: "Material Icons";
+@function char($character-code) {
+  @if function-exists("selector-append") {
+    @return unquote("\"#{$character-code}\"");
+  }
+  @return str-slice("\x", 1, 1) + $character-code;
+}
+
+$icons: (
+        play: 'play_arrow',
+        play-circle: 'play_circle_outline',
+        pause: 'pause',
+        volume-mute: 'volume_off',
+        volume-low: 'volume_down',
+        volume-mid: 'volume_up',
+        volume-high: 'volume_up',
+        fullscreen-enter: 'fullscreen',
+        fullscreen-exit: 'fullscreen_exit',
+        square: 'f10a',
+        spinner: 'cached',
+        subtitles: 'subtitles',
+        captions: 'closed_caption',
+        chapters: 'track_changes',
+        share: 'share',
+        cog: 'settings',
+        circle: 'fiber_manual_record',
+        circle-outline: 'panorama_fish_eye',
+        circle-inner-circle: 'adjust',
+        hd: 'hd',
+        cancel: 'clear',
+        replay: 'replay',
+        facebook: 'f117',
+        gplus: 'f118',
+        linkedin: 'f119',
+        twitter: 'f11a',
+        tumblr: 'f11b',
+        pinterest: 'f11c',
+        audio-description: 'headset',
+        audio: 'audiotrack',
+);
+
+@each $name, $content in $icons {
+  .vjs-icon-#{$name} {
+    font-family: $icon-font-family;
+    font-size: inherit;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    &:before {
+      content: char($content);
+    }
+  }
+}
